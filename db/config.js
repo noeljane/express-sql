@@ -5,6 +5,6 @@ const options = {
 }
 
 const pgp = require('pg-promise')(options);
-const db = pgp('postgress://localhost:5432/doggo')
+const db = pgp(process.env.DATABASE_URL ||'postgress://localhost:5432/doggo');
 
-module.exports = db
+module.exports = db;
